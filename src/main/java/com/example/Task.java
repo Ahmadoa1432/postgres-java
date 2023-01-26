@@ -113,10 +113,10 @@ public class Task {
         try {
             Connection dbConnection = DBConnection.getInstance().getConnection();
             Statement stmt = dbConnection.createStatement();
-            PreparedStatement insertStmt =
+            PreparedStatement deleteStmt =
                     dbConnection.prepareStatement("DELETE FROM todo WHERE id=?;");
-            insertStmt.setInt(1, id);
-            int rows = insertStmt.executeUpdate();
+            deleteStmt.setInt(1, id);
+            int rows = deleteStmt.executeUpdate();
             System.out.println("Rows affected: " + rows);
         } catch (SQLException e) {
             e.printStackTrace();

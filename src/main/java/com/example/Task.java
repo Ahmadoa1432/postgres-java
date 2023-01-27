@@ -71,7 +71,7 @@ public class Task {
         try {
             Connection dbConnection = DBConnection.getInstance().getConnection();
             Statement stmt = dbConnection.createStatement();
-            String query = "SELECT id, task, done FROM todo";
+            String query = "SELECT id, task, done, username FROM todo";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next()){
                 //Display values
